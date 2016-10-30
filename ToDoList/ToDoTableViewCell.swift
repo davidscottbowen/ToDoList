@@ -13,8 +13,7 @@ class ToDoTableViewCell: UITableViewCell {
     @IBOutlet weak var toDoDate: UILabel!
     @IBOutlet weak var toDoDetail: UILabel!
     @IBOutlet weak var toDoModified: UILabel!
-    @IBOutlet weak var toDoImage: UIImageView!
-    
+  
     var toDo: ToDo!
     
     override func awakeFromNib() {
@@ -32,7 +31,6 @@ class ToDoTableViewCell: UITableViewCell {
         toDoTitle.text = toDo.title
         toDoDetail.text = toDo.text
         toDoDate.text = toDo.dateString
-        toDoModified.text = "Last modified " + toDo.dateString
-        toDoImage.image = toDo.image
+        toDoModified.text = "Last Modified: " + toDo.modifiedString
     }
 }

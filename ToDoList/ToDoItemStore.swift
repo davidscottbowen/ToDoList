@@ -60,6 +60,7 @@ class ToDoItemStore {
     
     func getToDoTotal(_ sectionIndex: Int) -> Int {
         return toDos[sectionIndex].count
+       
     }
     
     func removeSection(_ sectionIndex: Int) {

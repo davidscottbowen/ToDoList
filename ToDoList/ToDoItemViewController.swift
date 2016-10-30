@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import  UserNotifications
+import UserNotificationsUI
 
-class ToDoItemViewController: UIViewController {
+class ToDoItemViewController: UIViewController, UNUserNotificationCenterDelegate {
     static let shared = ToDoItemViewController()
     
     @IBOutlet weak var toDoTitle: UITextField!
     @IBOutlet weak var toDoDetail: UITextView!
     @IBOutlet weak var toDoDate: UILabel!
-    @IBOutlet weak var Modified: UILabel!
     @IBOutlet weak var datePickerValue: UIDatePicker!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var category: UIPickerView!
@@ -29,8 +30,7 @@ class ToDoItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        toDoDate.text = ""
-        Modified.text = ""
+        toDoDate.text = toDo.dateString
         complete.isOn = toDo.complete
         toDoTitle.text = toDo.title
         toDoDetail.text = toDo.text
@@ -81,12 +81,26 @@ class ToDoItemViewController: UIViewController {
     
     // MARK: - Navigation
     
+    // saves the fields data
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         toDo.title = toDoTitle.text!
         toDo.text = toDoDetail.text!
+        toDo.date = datePickerValue.date
         toDo.category = category.selectedRow(inComponent: 0)
         toDo.image = imageView.image
+        toDo.alert = toDoTitle.text!
+        let notificationDate = toDo.date.timeIntervalSinceNow
+        let notification = UNMutableNotificationContent()
+        notification.title = toDo.title
+        notification.subtitle = "DUE NOW"
+        notification.categoryIdentifier = "alarm"
+        notification.sound = UNNotificationSound.default()
+        notification.body = "This ToDo has came due"
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: notificationDate, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: trigger)
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().add(request)
         if complete.isOn {
             toDo.complete = true
         }

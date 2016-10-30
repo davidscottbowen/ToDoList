@@ -12,14 +12,20 @@ class ToDo: NSObject, NSCoding {
     var title = ""
     var text = ""
     var date = Date()
-    var category = 0
-    var complete = false
     var dateString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
         return dateFormatter.string(from: date)
     }
+    var category = 0
+    var complete = false
     var modified = Date()
+    var modifiedString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: modified)
+    }
+    var alert: String?
     var image: UIImage?
 
     //Keys for saving
@@ -29,6 +35,7 @@ class ToDo: NSObject, NSCoding {
     let completeKey = "complete"
     let imageKey = "image"
     let modifiedKey = "modified"
+    let alertKey = "alert"
     
     //persistance
     
@@ -36,6 +43,7 @@ class ToDo: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         self.title = aDecoder.decodeObject(forKey: titleKey) as! String
         self.text = aDecoder.decodeObject(forKey: textKey) as! String
+        self.alert = aDecoder.decodeObject(forKey: alertKey) as? String
         self.date = aDecoder.decodeObject(forKey: dateKey) as! Date
         self.complete = aDecoder.decodeBool(forKey: completeKey)
         self.modified = aDecoder.decodeObject(forKey: modifiedKey) as! Date
@@ -46,6 +54,7 @@ class ToDo: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(title, forKey: titleKey)
         aCoder.encode(text, forKey: textKey)
+        aCoder.encode(alert, forKey: alertKey)
         aCoder.encode(date, forKey: dateKey)
         aCoder.encode(complete, forKey: completeKey)
         aCoder.encode(image, forKey: imageKey)
