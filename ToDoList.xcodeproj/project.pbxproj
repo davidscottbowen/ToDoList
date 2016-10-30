@@ -18,7 +18,6 @@
 		CF1BADCD1DBE75A000CA907B /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1BADCC1DBE75A000CA907B /* ToDoTableViewCell.swift */; };
 		CF1BADCF1DBE85D100CA907B /* ToDoItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1BADCE1DBE85D100CA907B /* ToDoItemStore.swift */; };
 		CF1BADD11DBE8BCB00CA907B /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1BADD01DBE8BCB00CA907B /* ToDo.swift */; };
-		CF43D89C1DC2DCCF001AE8C2 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43D89B1DC2DCCF001AE8C2 /* ImageViewController.swift */; };
 		CF7A214D1DBEF7A200B04989 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A214C1DBEF7A200B04989 /* ReminderViewController.swift */; };
 		CF83CE9F1DC220F000293197 /* CategoryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83CE9E1DC220F000293197 /* CategoryClass.swift */; };
 		CF83CEA11DC2293000293197 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF83CEA01DC2293000293197 /* CategoryStore.swift */; };
@@ -38,7 +37,6 @@
 		CF1BADCC1DBE75A000CA907B /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		CF1BADCE1DBE85D100CA907B /* ToDoItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemStore.swift; sourceTree = "<group>"; };
 		CF1BADD01DBE8BCB00CA907B /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
-		CF43D89B1DC2DCCF001AE8C2 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		CF7A214C1DBEF7A200B04989 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		CF83CE9E1DC220F000293197 /* CategoryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryClass.swift; sourceTree = "<group>"; };
 		CF83CEA01DC2293000293197 /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				CF7A214C1DBEF7A200B04989 /* ReminderViewController.swift */,
 				CF83CE9E1DC220F000293197 /* CategoryClass.swift */,
 				CF83CEA01DC2293000293197 /* CategoryStore.swift */,
-				CF43D89B1DC2DCCF001AE8C2 /* ImageViewController.swift */,
 				CF1747FC1DC576570083DB26 /* CategoryEditTableViewController.swift */,
 				CF1747FE1DC6380F0083DB26 /* CategoryAddViewController.swift */,
 			);
@@ -169,7 +166,6 @@
 			files = (
 				CF1BADC71DBE5F1A00CA907B /* ToDoItemViewController.swift in Sources */,
 				CF1BADCB1DBE65DC00CA907B /* ToDoListViewController.swift in Sources */,
-				CF43D89C1DC2DCCF001AE8C2 /* ImageViewController.swift in Sources */,
 				CF83CE9F1DC220F000293197 /* CategoryClass.swift in Sources */,
 				CF7A214D1DBEF7A200B04989 /* ReminderViewController.swift in Sources */,
 				CF83CEA11DC2293000293197 /* CategoryStore.swift in Sources */,

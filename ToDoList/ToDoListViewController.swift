@@ -28,11 +28,8 @@ class ToDoListViewController: UIViewController {
             completeValue = false
             self.tableView.reloadData()
         }
-        
     }
-    
- 
-    
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

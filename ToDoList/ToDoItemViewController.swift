@@ -96,7 +96,7 @@ class ToDoItemViewController: UIViewController, UNUserNotificationCenterDelegate
         notification.subtitle = "DUE NOW"
         notification.categoryIdentifier = "alarm"
         notification.sound = UNNotificationSound.default()
-        notification.body = "This ToDo has came due"
+        notification.body = "This ToDo Item has came due"
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: notificationDate, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: trigger)
         UNUserNotificationCenter.current().delegate = self
