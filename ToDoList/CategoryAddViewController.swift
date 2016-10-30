@@ -27,14 +27,9 @@ class CategoryAddViewController: UIViewController {
         CategoryStore.shared.category.append(Category(title: addCategory.text!))
         ToDoItemStore.shared.addNewSection()
         CategoryStore.shared.save()
+        ToDoItemStore.shared.save()
+        
     }
-    
-
-
-    
-    
-    
-    
     
     // MARK: - Navigation
 
