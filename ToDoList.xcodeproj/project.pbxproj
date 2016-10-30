@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1747FD1DC576570083DB26 /* CategoryEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1747FC1DC576570083DB26 /* CategoryEditTableViewController.swift */; };
 		CF1BADB31DBE56DC00CA907B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1BADB21DBE56DC00CA907B /* AppDelegate.swift */; };
 		CF1BADB81DBE56DC00CA907B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF1BADB61DBE56DC00CA907B /* Main.storyboard */; };
 		CF1BADBA1DBE56DC00CA907B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF1BADB91DBE56DC00CA907B /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF1747FC1DC576570083DB26 /* CategoryEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditTableViewController.swift; sourceTree = "<group>"; };
 		CF1BADAF1DBE56DC00CA907B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1BADB21DBE56DC00CA907B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF1BADB71DBE56DC00CA907B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				CF83CE9E1DC220F000293197 /* CategoryClass.swift */,
 				CF83CEA01DC2293000293197 /* CategoryStore.swift */,
 				CF43D89B1DC2DCCF001AE8C2 /* ImageViewController.swift */,
+				CF1747FC1DC576570083DB26 /* CategoryEditTableViewController.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				CF1BADB31DBE56DC00CA907B /* AppDelegate.swift in Sources */,
 				CF1BADD11DBE8BCB00CA907B /* ToDo.swift in Sources */,
 				CF1BADCF1DBE85D100CA907B /* ToDoItemStore.swift in Sources */,
+				CF1747FD1DC576570083DB26 /* CategoryEditTableViewController.swift in Sources */,
 				CF1BADCD1DBE75A000CA907B /* ToDoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
