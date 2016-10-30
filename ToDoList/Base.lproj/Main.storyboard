@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swp-5c-f3F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3234" y="859"/>
+            <point key="canvasLocation" x="4266" y="858"/>
         </scene>
         <!--ToDo-->
         <scene sceneID="Zd9-Wv-0LP">
@@ -353,7 +353,7 @@
             </objects>
             <point key="canvasLocation" x="836" y="66"/>
         </scene>
-        <!--Category Edit Table View Controller-->
+        <!--Category Management-->
         <scene sceneID="O85-61-5Ke">
             <objects>
                 <tableViewController id="2vi-AB-rrs" customClass="CategoryEditTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -376,10 +376,55 @@
                             <outlet property="delegate" destination="2vi-AB-rrs" id="BeO-E4-5CZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Category Management" id="XL6-mQ-9HX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kOa-CP-p6o">
+                            <connections>
+                                <segue destination="yoU-Ek-CrX" kind="show" id="DDp-db-n6R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nch-NR-b1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1654" y="858"/>
+        </scene>
+        <!--Category Add View Controller-->
+        <scene sceneID="dQM-wf-DVZ">
+            <objects>
+                <viewController id="yoU-Ek-CrX" customClass="CategoryAddViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yIr-9n-VrM"/>
+                        <viewControllerLayoutGuide type="bottom" id="7cN-9q-sQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oSg-WN-mZs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mc4-AQ-SZU">
+                                <frame key="frameInset" minX="240" minY="72" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addNewCategory:" destination="yoU-Ek-CrX" eventType="touchUpInside" id="7bM-fr-7wx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-n3-a5x">
+                                <frame key="frameInset" minX="68" minY="72" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addCategory" destination="Aag-n3-a5x" id="3vK-z2-tCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAp-0H-k9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397.5999999999999" y="857.72113943028489"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zTH-7a-HaP">
@@ -397,7 +442,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otc-Zf-Anl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="859"/>
+            <point key="canvasLocation" x="3473" y="858"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

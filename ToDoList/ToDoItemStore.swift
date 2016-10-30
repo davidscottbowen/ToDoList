@@ -62,6 +62,14 @@ class ToDoItemStore {
         return toDos[sectionIndex].count
     }
     
+    func removeSection(_ sectionIndex: Int) {
+        toDos.remove(at: sectionIndex)
+    }
+    
+    func addNewSection() {
+        toDos.append([])
+    }
+    
     func save() {
         NSKeyedArchiver.archiveRootObject(toDos, toFile: archiveFilePath())
     }

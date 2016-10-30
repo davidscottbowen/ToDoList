@@ -46,13 +46,13 @@ class CategoryEditTableViewController: UITableViewController {
     }
  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            CategoryStore.shared.removeCategory(indexPath.row)
+            ToDoItemStore.shared.removeSection(indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
-    */
 
     /*
     // Override to support editing the table view.
@@ -81,14 +81,15 @@ class CategoryEditTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+ 
 
 }

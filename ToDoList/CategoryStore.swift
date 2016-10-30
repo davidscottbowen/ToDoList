@@ -14,7 +14,7 @@ class CategoryStore {
     
     static let shared = CategoryStore()
     
-    fileprivate var category: [Category] = []
+    var category: [Category] = []
     
     init() {
         let filePath = archiveFilePath()
@@ -52,6 +52,12 @@ class CategoryStore {
         }
         return myArray
     }
+    
+    func removeCategory(_ index: Int) {
+        category.remove(at: index)
+        save()
+    }
+    
     
     // save function
     
