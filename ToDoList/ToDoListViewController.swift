@@ -125,16 +125,18 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-    //     MARK: - Unwind Segue
+    //     MARK: - Unwind Segue Category Manage
+    
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        tableView.reloadData()
+    }
+    
+    //     MARK: - Unwind Segue Save
     @IBAction func saveToDoItem(_ segue: UIStoryboardSegue) {
         let ToDoItemVC = segue.source as! ToDoItemViewController
         if tableView.indexPathForSelectedRow != nil {
             
             let indexPaths: [IndexPath] = []
-//            for index in 0...indexPath.row {
-//                indexPaths.append(IndexPath(row: index, section: 0))
-            
-        
             tableView.reloadRows(at: indexPaths, with: .automatic)
             tableView.reloadData()
         } else {

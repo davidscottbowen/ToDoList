@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kO8-4A-QEb" id="ysS-j3-5qe">
-                                            <frame key="frameInset" width="320" height="131"/>
+                                            <frame key="frameInset" width="320" height="131.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7C-tV-hnk">
@@ -94,7 +94,7 @@
                             </barButtonItem>
                             <barButtonItem style="plain" id="QiE-Hk-M2w">
                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="L0B-Uu-v68">
-                                    <rect key="frame" x="220" y="6" width="51" height="31"/>
+                                    <rect key="frame" x="218.5" y="6" width="51" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <connections>
                                         <action selector="completeCheck:" destination="N1i-ir-IpK" eventType="valueChanged" id="IQK-nv-dPb"/>
@@ -282,7 +282,7 @@
             </objects>
             <point key="canvasLocation" x="836" y="66"/>
         </scene>
-        <!--Category Management-->
+        <!--Category Manage-->
         <scene sceneID="O85-61-5Ke">
             <objects>
                 <tableViewController id="2vi-AB-rrs" customClass="CategoryEditTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,7 +295,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dOB-vW-I3r" id="vLq-iu-UH0">
-                                    <frame key="frameInset" width="320" height="43"/>
+                                    <frame key="frameInset" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -305,15 +305,26 @@
                             <outlet property="delegate" destination="2vi-AB-rrs" id="BeO-E4-5CZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Category Management" id="XL6-mQ-9HX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kOa-CP-p6o">
-                            <connections>
-                                <segue destination="yoU-Ek-CrX" kind="show" id="DDp-db-n6R"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Category Manage" id="XL6-mQ-9HX">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="kOa-CP-p6o">
+                                <connections>
+                                    <segue destination="yoU-Ek-CrX" kind="show" id="DDp-db-n6R"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Done" id="z8G-uu-nS4">
+                                <connections>
+                                    <action selector="done:" destination="2vi-AB-rrs" id="q51-j3-mrO"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XdB-gh-LtY" kind="unwind" identifier="unwindToToDoList" unwindAction="unwindToToDoListWithSegue:" id="s6g-ND-83E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nch-NR-b1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XdB-gh-LtY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1654" y="858"/>
         </scene>
@@ -349,9 +360,11 @@
                     </view>
                     <connections>
                         <outlet property="addCategory" destination="Aag-n3-a5x" id="3vK-z2-tCJ"/>
+                        <segue destination="yt1-eG-OMM" kind="unwind" identifier="unwindToCategoryEdit" unwindAction="unwindToCategoryEditWithSegue:" id="d7M-nt-MaA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAp-0H-k9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yt1-eG-OMM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2397.5999999999999" y="857.72113943028489"/>
         </scene>

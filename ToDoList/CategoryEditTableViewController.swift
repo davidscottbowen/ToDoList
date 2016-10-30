@@ -24,6 +24,20 @@ class CategoryEditTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    @IBAction func done(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "unwindToToDoList", sender: self)
+        
+    }
+    
+    
+    @IBAction func unwindToCategoryEdit(segue: UIStoryboardSegue) {
+        tableView.reloadData()
+    }
+    
+    
 
     // MARK: - Table view data source
 

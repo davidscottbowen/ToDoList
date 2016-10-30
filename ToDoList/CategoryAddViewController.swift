@@ -28,6 +28,7 @@ class CategoryAddViewController: UIViewController {
         ToDoItemStore.shared.addNewSection()
         CategoryStore.shared.save()
         ToDoItemStore.shared.save()
+        self.performSegue(withIdentifier: "unwindToCategoryEdit", sender: self)
         
     }
     
