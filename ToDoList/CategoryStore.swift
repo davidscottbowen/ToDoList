@@ -13,7 +13,6 @@ import UIKit
 class CategoryStore {
     
     static let shared = CategoryStore()
-    
     var category: [Category] = []
     
     init() {
@@ -32,7 +31,6 @@ class CategoryStore {
             
             save()
         }
-        //        sort()
     }
     
     // MARK: - Public Functions
@@ -58,20 +56,11 @@ class CategoryStore {
         save()
     }
     
-    
-    
     // save function
     
     func save() {
         NSKeyedArchiver.archiveRootObject(category, toFile: archiveFilePath())
     }
-    
-    //
-    //    func sort() {
-    //        toDos.sort { (toDo1, toDo2) -> Bool in
-    //            return toDo1.date.compare(toDo2.date) == .orderedDescending
-    //        }
-    //    }
     
     // MARK: - save plist function
     

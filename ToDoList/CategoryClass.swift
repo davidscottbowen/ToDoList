@@ -11,7 +11,7 @@ import UIKit
 class Category: NSObject, NSCoding {
     var title = ""
     
-    //these are keys for encoding and decoding
+    //key for encoding and decoding
     let titleKey = "title"
     
     //Decoding 
@@ -30,10 +30,9 @@ class Category: NSObject, NSCoding {
         super.init()
     }
     
-    //more robust initializer
+    //initializer
     init(title: String) {
         self.title = title
     }
-    
 }
 

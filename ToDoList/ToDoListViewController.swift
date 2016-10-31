@@ -17,7 +17,6 @@ class ToDoListViewController: UIViewController {
     
     @IBAction func editButton(_ sender: AnyObject) {
         tableView.setEditing(!tableView.isEditing, animated: true)
-        
     }
     @IBAction func completeCheck(_ sender: AnyObject) {
         
@@ -63,9 +62,7 @@ class ToDoListViewController: UIViewController {
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
-        
         return sourceIndexPath.section == proposedDestinationIndexPath.section ? proposedDestinationIndexPath : sourceIndexPath
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,12 +71,9 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
-        
-    
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -89,17 +83,13 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ToDoItemStore.shared.getToDoTotal(section)
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:
             ToDoTableViewCell.self)) as! ToDoTableViewCell
-        
         let currentItem = ToDoItemStore.shared.getToDo(indexPath.section, rowIndex: indexPath.row)
-        
         cell.setUpCell(ToDoItemStore.shared.getToDo(indexPath.section, rowIndex: indexPath.row))
-        
         if completeValue == true {
             if currentItem.complete == true {
                 cell.isHidden = true
@@ -107,8 +97,6 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.isHidden = false
             }
         }
-        
-        
         return cell
     }
     
@@ -141,5 +129,4 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource{
             tableView.reloadData()
         }
     }
-
 }

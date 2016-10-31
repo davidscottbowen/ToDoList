@@ -25,20 +25,14 @@ class CategoryEditTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     @IBAction func done(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "unwindToToDoList", sender: self)
-        
     }
-    
     
     @IBAction func unwindToCategoryEdit(segue: UIStoryboardSegue) {
         tableView.reloadData()
     }
     
-    
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,7 +45,6 @@ class CategoryEditTableViewController: UITableViewController {
         return CategoryStore.shared.getCategoryTotal()
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryEditCell", for: indexPath)
         
@@ -59,7 +52,6 @@ class CategoryEditTableViewController: UITableViewController {
         return cell
     }
  
-
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             CategoryStore.shared.removeCategory(indexPath.row)
@@ -97,13 +89,13 @@ class CategoryEditTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
-
+    
+    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        tableView.reloadData()
     }
- 
-
+    */
 }

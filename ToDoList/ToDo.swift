@@ -48,7 +48,6 @@ class ToDo: NSObject, NSCoding {
         self.complete = aDecoder.decodeBool(forKey: completeKey)
         self.modified = aDecoder.decodeObject(forKey: modifiedKey) as! Date
         self.image = aDecoder.decodeObject(forKey: imageKey) as? UIImage
-        
     }
     
     func encode(with aCoder: NSCoder) {

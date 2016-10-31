@@ -24,20 +24,16 @@ class ToDoItemStore {
         if fileManager.fileExists(atPath: filePath) {
              toDos = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as! [[ToDo]]
         } else {
-            
             //preload toDo rows
-            
             for _ in 1...CategoryStore.shared.getCategoryTotal(){
                 toDos.append([])
             }
-            
             toDos[0] = [ToDo(title: "Ex. Home Item", text: "Ex. Item details")]
             toDos[1] = [ToDo(title: "Ex. Work Item", text: "Ex. Item details")]
             toDos[2] = [ToDo(title: "Ex. Store Item", text: "Ex. Item details")]
             
             save()
         }
-        //sort()
     }
     
     // MARK: - Public Functions
@@ -74,12 +70,6 @@ class ToDoItemStore {
     func save() {
         NSKeyedArchiver.archiveRootObject(toDos, toFile: archiveFilePath())
     }
-    
-//        func sort() {
-//            toDos.sort { (toDo1, toDo2) -> Bool in
-//                return toDo1.date.compare(toDo2.date) == .orderedDescending
-//            }
-//        }
     
     // MARK: - Private Functions
     

@@ -22,9 +22,7 @@ class ToDoItemViewController: UIViewController, UNUserNotificationCenterDelegate
     @IBOutlet weak var complete: UISwitch!
     
     var gestureRecognizer: UITapGestureRecognizer!
-    
     var toDo = ToDo()
-    
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
