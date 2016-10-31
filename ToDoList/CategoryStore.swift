@@ -42,13 +42,13 @@ class CategoryStore {
         return category[row].title
     }
     func getSections() -> [String]{
-        var myArray = [String]()
+        var sectionArray = [String]()
         if ((category.count - 1) >= 0) {
             for i in 0...category.count - 1{
-                myArray.append(category[i].title)
+                sectionArray.append(category[i].title)
             }
         }
-        return myArray
+        return sectionArray
     }
     
     func removeCategory(_ index: Int) {
@@ -57,7 +57,6 @@ class CategoryStore {
     }
     
     // save function
-    
     func save() {
         NSKeyedArchiver.archiveRootObject(category, toFile: archiveFilePath())
     }

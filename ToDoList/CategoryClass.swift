@@ -15,7 +15,6 @@ class Category: NSObject, NSCoding {
     let titleKey = "title"
     
     //Decoding 
-    
     required init?(coder aDecoder: NSCoder) {
         self.title = aDecoder.decodeObject(forKey: titleKey) as! String
     }
